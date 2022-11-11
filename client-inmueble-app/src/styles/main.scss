@@ -1,0 +1,13 @@
+@import "colors.scss";
+@import "fonts.scss";
+@import "vendor/index.scss";
+
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  background-color:white;
+}
