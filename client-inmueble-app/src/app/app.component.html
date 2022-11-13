@@ -1,0 +1,9 @@
+<!--Agregando metodo para hacer llamado al boton de TOOGLE-->
+<button (click)="onToggleSpinner()">Toggle Spinner</button>
+
+<app-spinner *ngIf="showSpinner"></app-spinner>
+
+<button appFilesUpload [multiple]="true" (changed)="onFilesChanged($event)">Subir Jpgs al Servidor</button>
+
+<button (click)="onSuccess()">Mensaje de Exito</button>
+<button (click)="onError()">Mensaje de Error</button>
