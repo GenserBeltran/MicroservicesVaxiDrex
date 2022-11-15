@@ -1,0 +1,14 @@
+<mat-sidenav-container>
+  <!--Prime elemento de este tipo de container - Representacion del drawer-->
+  <mat-sidenav #menu>
+    <app-menu-list (menuToggle)="menu.toggle()"></app-menu-list>
+  </mat-sidenav>
+  <!--Segundo elemento de este tipo de container - contenido dinamico-->
+  <mat-sidenav-content>
+    <app-header (menuToggle)="menu.toggle()"></app-header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
