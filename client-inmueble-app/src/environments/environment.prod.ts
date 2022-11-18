@@ -8,5 +8,6 @@ export const environment = {
     authDomain: 'edificacion-app-155e8.firebaseapp.com',
     messagingSenderId: '829643555257',
   },
-  production: true
+  production: true,
+  url: 'http://localhost:5555/',
 };

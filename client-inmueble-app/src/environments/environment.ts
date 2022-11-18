@@ -12,8 +12,10 @@ export const environment = {
     authDomain: 'edificacion-app-155e8.firebaseapp.com',
     messagingSenderId: '829643555257',
   },
-  production: false
+  production: false,
+  url: 'http://localhost:5555/',
 };
+
 
 /*
 * For easier debugging in development mode, you can import the following file
