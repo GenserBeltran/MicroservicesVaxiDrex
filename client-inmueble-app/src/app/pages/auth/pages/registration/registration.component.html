@@ -1,0 +1,57 @@
+<app-spinner *ngIf="loading$ | async"></app-spinner>
+
+<section fxLayoutAlign="center">
+  <mat-card>
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm"
+      (ngSubmit)="registrarUsuario(f)">
+
+      <mat-form-field>
+        <mat-label>Ingrese Nombre</mat-label>
+        <input type="text" matInput placeholder="nombre" name="nombre" ngModel required="">
+        <mat-error>Debe Ingresar Un nombre</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Ingrese Apellido</mat-label>
+        <input type="text" matInput placeholder="apellido" name="apellidos" ngModel required="">
+        <mat-error>Debe Ingresar Un Apellido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Ingrese UserName</mat-label>
+        <input type="text" matInput placeholder="username" name="username" ngModel required="">
+        <mat-error>Debe Ingresar Un UserName</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Ingrese Telefono</mat-label>
+        <input type="text" matInput placeholder="telefono" name="telefono" ngModel required="">
+        <mat-error>Debe Ingresar Un Telefono</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Ingrese E-mail</mat-label>
+        <input type="email" matInput placeholder="E-mail" name="email" ngModel required="">
+        <mat-error>Debe Ingresar Un Email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Ingrese Password</mat-label>
+        <input type="password" matInput placeholder="password" name="password" ngModel required="" minlength="7">
+        <mat-error>Debe Ingresar Password con mas de 7 caracteres</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Confirme Password</mat-label>
+        <input type="password" matInput placeholder="Confirme Password" name="passwordConfirme" ngModel required=""
+          minlength="7">
+        <mat-error>Deben conincidir las contraseñas</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Enviar</button>
+
+
+
+    </form>
+  </mat-card>
+</section>

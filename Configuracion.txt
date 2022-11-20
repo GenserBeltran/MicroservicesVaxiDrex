@@ -1,0 +1,13 @@
+Configuracion 
+1.	Creo la rama 
+2.	Copio los proyectos de la rama 21
+3.	Copia el proyecto de Anguñar de la rama 20
+4.	Configuro App Angular
+5.	Configuro Microservicios
+	Levanto los Contendores de las DB
+6.	Levanto app angular
+7.	Levanto microservicios
+		Eureka
+		Gateway
+		Inmueble
+		Compra
