@@ -1,0 +1,44 @@
+<div class="files-upload">
+
+  <div class="files-upload__header">
+    <h3>Files Uploading</h3>
+  </div>
+  <div class="files-upload__content">
+
+    <ng-container *ngIf="!files.length">
+
+      <div class="dropzone" appDropZone (hovered)="toggleHover($event)" [class.dropzone__hovered]="isHovering"
+        (dropped)="onDrop($event)">
+        <div class="dropzone__label">Deja aquí tus archivos</div>
+        <div class="dropzone__file">
+          <!--Permite la subirda de archivos-->
+          <label class="file">
+            <input class="file__input" [multiple]="data.multiple" type="file" (change)="onDropFile($event)" />
+            <span class="file__label">Seleccionar</span>
+          </label>
+        </div>
+
+      </div>
+      <!--Mensajes de ERROR-->
+      <div class="error" *ngIf="isError">
+        Seleccione Un Archivo
+      </div>
+
+    </ng-container>
+
+    <ng-container *ngIf="files">
+      <app-upload *ngFor="let file of files" [file]="file" (completed)="onUploadComplete($event)"></app-upload>
+    </ng-container>
+
+
+
+  </div>
+
+  <div class="files-upload__footer">
+    <button class="app-button" (click)="onClose()" *ngIf="!filesURLs.length">Cerrar</button>
+    <!--Solo se mostrara este boton cuando la coleccion de url tenga un valor-->
+    <button class="app-button" (click)="onComplete()" *ngIf="filesURLs.length">Completado</button>
+
+  </div>
+
+</div>
