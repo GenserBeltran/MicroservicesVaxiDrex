@@ -1,0 +1,51 @@
+<app-spinner *ngIf="loading$ | async"></app-spinner>
+
+<mat-toolbar color="secondary">
+  <span>Registrar Nuevo Inmueble</span>
+</mat-toolbar>
+<section fxLayoutAlign="center">
+  <mat-card>
+    <!--Evento que envia el request con peticion de registrar-->
+    <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="registrarInmueble(f)"
+      fxLayoutGap="10px">
+      <!--Container para subir una imagen y retonrmar la url de fibase(Para llamar la imagen)-->
+      <div class="personal__photo">
+        <!--Imagen guardada en Firebase(recibe la url)-->
+        <div class="photo">
+          <app-entity-photo class="photo__img" [photoURL]="photoLoaded"></app-entity-photo>
+          <button mat-button appFilesUpload (changed)="onFilesChanged($event)">
+            <mat-icon>upload</mat-icon>
+            Subir Imagen
+          </button>
+        </div>
+        <!--Cajas de Texto-->
+        <mat-form-field>
+          <mat-label>Ingrese Nombre</mat-label>
+          <input type="text" name="nombre" required ngModel placeholder="Ingrese Nombre" matInput>
+          <!--Mensaje de erro si no llena el campo-->
+          <mat-error>Debe ingresar un nombre</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Ingrese Direccion</mat-label>
+          <input type="text" name="direccion" required ngModel placeholder="Ingrese Direccion" matInput>
+          <!--Mensaje de erro si no llena el campo-->
+          <mat-error>Debe ingresar la Direccion</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Ingrese Precio</mat-label>
+          <input type="text" name="precio" required ngModel placeholder="Ingrese Precio" matInput>
+          <!--Mensaje de erro si no llena el campo-->
+          <mat-error>Debe ingresar el Precio</mat-error>
+        </mat-form-field>
+        <!--El disable valida que el formulario este diligenciado correctamente-->
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Guardar Inmuebles</button>
+
+
+      </div>
+
+    </form>
+  </mat-card>
+
+</section>
